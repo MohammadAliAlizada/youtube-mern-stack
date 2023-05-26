@@ -1,13 +1,16 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
-import CategoriesBar from '../categoriesBar/CategoriesBar';
-import Video from '../video/Video';
+import CategoriesBar from '../../categoriesBar/CategoriesBar';
+import Video from '../../video/Video';
 
 const HomeScreen = () => {
+
+
+
     return (
-        <Container>
+        <Container >
             <CategoriesBar />
-            <Row>
+            <Row >
                 {[...new Array(20)].map(() => (
                     <Col lg={3} md={4}>
                         <Video />
