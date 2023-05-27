@@ -46,6 +46,6 @@ export const authReducer = (prevState = initialState, action) => {
                 user: null,
             }
         default:
-            return { ...prevState }
+            return prevState
     }
 }
