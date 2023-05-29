@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Col } from 'react-bootstrap';
 import CategoriesBar from '../../categoriesBar/CategoriesBar';
 import Video from '../../video/Video';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPopularVideos, getVideosByCategory } from '../../../redux/actions/videos.action';
 import InfiniteScroll from 'react-infinite-scroll-component'
-import Skeleton from 'react-loading-skeleton'
+
+import SkeletonVideo from '../../Skeleton/SkeletonVideo';
+
 const HomeScreen = () => {
 
     const dispatch = useDispatch()
@@ -27,26 +29,27 @@ const HomeScreen = () => {
     return (
         <Container >
             <CategoriesBar />
-            <Row >
-                <InfiniteScroll
-                    dataLength={videos.length}
-                    next={fetchData}
-                    hasMore={true}
-                    Loader={
-                        <div className="spainner-border text-danger d-block mx-auto"></div>
-                    } className="row">
-                    {!loading ? videos.map((video) => (
+
+            <InfiniteScroll
+                dataLength={videos.length}
+                next={fetchData}
+                hasMore={true}
+                Loader={
+                    <div className="spainner-border text-danger d-block mx-auto"></div>
+                } className="row">
+                {loading === false ? videos.map((video) => (
+                    <Col lg={3} md={4}>
+                        <Video video={video} key={video.id} />
+                    </Col>
+                ))
+                    : [...Array(20)].map(() => {
                         <Col lg={3} md={4}>
-                            <Video video={video} key={video.id} />
+
+                            <SkeletonVideo />
                         </Col>
-                    ))
-                        : [...Array(20)].map(() => {
-                            <Col lg={3} md={4}>
-                                <Skeleton heigh={180} width="100%" />
-                            </Col>
-                        })}
-                </InfiniteScroll>
-            </Row>
+                    })}
+            </InfiniteScroll>
+
         </Container>
     )
 }

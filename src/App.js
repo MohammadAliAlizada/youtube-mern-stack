@@ -8,6 +8,7 @@ import { Container } from 'react-bootstrap';
 import HomeScreen from './components/screen/homeScreen/HomeScreen';
 import LoginScreen from './components/screen/loginScreen/LoginScreen';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import WatchScreen from './components/screen/watchScreen/WatchScreen';
 
 const Layout = ({ children }) => {
 
@@ -43,6 +44,10 @@ function App() {
         </Route>
         <Route path="/search" element={<Layout>
           <h1>Search Results</h1>
+        </Layout>}>
+        </Route>
+        <Route path="/watch/:id" element={<Layout>
+          <WatchScreen />
         </Layout>}>
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
