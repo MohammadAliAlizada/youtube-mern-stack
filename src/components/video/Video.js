@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import "./_video.scss"
+import './_video.scss'
+
 import { AiFillEye } from 'react-icons/ai'
-import request from '../../api';
+import request from '../../api'
+
 import moment from 'moment'
 import numeral from 'numeral'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { useNavigate } from 'react-router';
-
-const Video = ({ video }) => {
-
-    const navigate = useNavigate()
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { useNavigate } from 'react-router'
+const Video = ({ video, channelScreen }) => {
     const {
         id,
         snippet: {
             channelId,
-            channeltitle,
+            channelTitle,
             title,
             publishedAt,
-            thumbnails: {
-                medium },
+            thumbnails: { medium },
         },
+        contentDetails,
     } = video
 
     const [views, setViews] = useState(null)
@@ -27,15 +26,19 @@ const Video = ({ video }) => {
     const [channelIcon, setChannelIcon] = useState(null)
 
     const seconds = moment.duration(duration).asSeconds()
-    const _duration = moment.utc(seconds * 1000).format("mm:ss")
+    const _duration = moment.utc(seconds * 1000).format('mm:ss')
 
-    const _videoId = id?.videoId || id;
+    const _videoId = id ?.videoId || contentDetails ?.videoId || id
+
+   const navigate = useNavigate()
 
     useEffect(() => {
         const get_video_details = async () => {
-            const { data: { items } } = await request('/videos', {
+            const {
+                data: { items },
+            } = await request('/videos', {
                 params: {
-                    part: 'snippet,contentDetails,statistics',
+                    part: 'contentDetails,statistics',
                     id: _videoId,
                 },
             })
@@ -47,7 +50,9 @@ const Video = ({ video }) => {
 
     useEffect(() => {
         const get_channel_icon = async () => {
-            const { data: { items } } = await request('/channels', {
+            const {
+                data: { items },
+            } = await request('/channels', {
                 params: {
                     part: 'snippet',
                     id: channelId,
@@ -61,29 +66,28 @@ const Video = ({ video }) => {
     const handleVideoClick = () => {
         navigate(`/watch/${_videoId}`)
     }
+
     return (
-        <div className="video" onClick={handleVideoClick}>
-            <div className="video__top">
-                {/* <img src={medium.url} alt="" /> */}
-                <LazyLoadImage src={medium.url} />
-                <span className="video__top__duration">{_duration}</span>
+        <div className='video' onClick={handleVideoClick}>
+            <div className='video__top'>
+                {/* <img src={medium.url} alt='' /> */}
+                <LazyLoadImage src={medium.url} effect='blur' />
+                <span className='video__top__duration'>{_duration}</span>
             </div>
-            <div className="video__title">
-                {title}
-            </div>
-            <div className="video__details">
+            <div className='video__title'>{title}</div>
+            <div className='video__details'>
                 <span>
-                    <AiFillEye /> {numeral(views).format("0.a")} Views •
-                </span>
-                <apan>{moment(publishedAt).fromNow()}</apan>
+                    <AiFillEye /> {numeral(views).format('0.a')} Views •{' '}
+                </span>{' '}
+                <span> {moment(publishedAt).fromNow()} </span>
             </div>
-            <div className="video__channel">
-                {/* <img src={channelIcon?.url} alt="" /> */}
-                <LazyLoadImage src={channelIcon ?.url} effect="blure" />
-                <p>{channeltitle}</p>
-            </div>
+            {!channelScreen && (
+                <div className='video__channel'>
+                    <LazyLoadImage src={channelIcon ?.url} effect='blur' />
 
-
+                    <p>{channelTitle}</p>
+                </div>
+            )}
         </div>
     )
 }

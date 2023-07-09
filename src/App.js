@@ -9,6 +9,9 @@ import HomeScreen from './components/screen/homeScreen/HomeScreen';
 import LoginScreen from './components/screen/loginScreen/LoginScreen';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import WatchScreen from './components/screen/watchScreen/WatchScreen';
+import SearchScreen from './components/screen/SearchScreen';
+import SubscriptionsScreen from './components/screen/subscriptionsScreen/SubscriptionsScreen'
+import ChannelScreen from './components/screen/channelScreen/ChannelScreen';
 
 const Layout = ({ children }) => {
 
@@ -42,12 +45,20 @@ function App() {
         </Route>
         <Route path="/auth" element={<LoginScreen />}>
         </Route>
-        <Route path="/search" element={<Layout>
-          <h1>Search Results</h1>
+        <Route path="/search/:query" element={<Layout>
+          <SearchScreen />
         </Layout>}>
         </Route>
         <Route path="/watch/:id" element={<Layout>
           <WatchScreen />
+        </Layout>}>
+        </Route>
+        <Route path="/feed/subscriptions" element={<Layout>
+          <SubscriptionsScreen />
+        </Layout>}>
+        </Route>
+        <Route path="/channel/:channelId" element={<Layout>
+          <ChannelScreen />
         </Layout>}>
         </Route>
         <Route path="*" element={<Navigate to="/" />} />

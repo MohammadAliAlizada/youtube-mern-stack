@@ -1,31 +1,5 @@
 @import '../../_base.scss';
 .videoHorizontal {
-    border-bottom: 0.3px solid $border-color;
-    cursor: pointer;
-
-    &__left{
-        position: relative;
-        text-align: center;
-    }
-
-    &__thumbnail{
-        width: 100%;
-
-        &-wrapper{
-            width: 100%;
-        }
-    }
-
-    &__duration{
-        position: absolute;
-
-        bottom: 0.8rem;
-        right: 1.2rem;
-
-        padding:  0.2rem;
-        background: #080808ec;@import '../../base.scss';
-
-.videoHorizontal {
    border-bottom: 0.3px solid $border-color;
 
    cursor: pointer;
@@ -120,62 +94,4 @@
          @include line-clamp(1);
       }
    }
-}
-        border-radius: 3px;
-    }
-
-    &__details{
-        font-size: 0.9rem;
-    }
-    &__title{
-        font-size: 0.9rem;
-
-        color: #fff;
-        letter-spacing: 0.3px;
-        @include line-clamp(1);
-    }
-
-    &__channel{
-        img{
-            width: 36px;
-            height: 36px;
-
-            border-radius: 50%;
-            margin-right: 0.5rem;
-            cursor: pointer;
-        }
-        p{
-            font-size: 0.9rem;
-            @include line-clamp(1);
-        }
-    }
-}
-
-@media (max-width: $breakpoint-small){
-    .videoHorizontal{
-        font-size: 112px;
-
-        &__details{
-            @include line-clamp(1);
-        }
-        &__channel{
-            margin: 0.1rem 0;
-
-            img{
-                display: none
-            }
-            p{
-                font-size: 0.9rem;
-            }
-        }
-
-        // &__desc{
-        //     display: none
-        // }
-
-        &__title{
-            font-size: 1rem;
-            @include line-clamp(2);
-        }
-    }
 }
