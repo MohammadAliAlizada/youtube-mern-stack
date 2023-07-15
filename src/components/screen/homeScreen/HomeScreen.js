@@ -10,12 +10,18 @@ import {
 
 import InfiniteScroll from 'react-infinite-scroll-component'
 import SkeletonVideo from '../../Skeleton/SkeletonVideo'
+import { useNavigate } from 'react-router';
 
 const HomeScreen = () => {
+    const navigate = useNavigate()
+    const { accessToken, loading: pageloading } = useSelector(state => state.auth)
     const dispatch = useDispatch()
     useEffect(() => {
+        if (!pageloading && !accessToken) {
+            navigate('/auth')
+        }
         dispatch(getPopularVideos())
-    }, [dispatch])
+    }, [dispatch, pageloading, navigate])
 
     const { videos, activeCategory, loading } = useSelector(
         state => state.homeVideos
@@ -30,6 +36,7 @@ const HomeScreen = () => {
 
     return (
         <Container>
+
             <CategoriesBar />
 
             <InfiniteScroll
