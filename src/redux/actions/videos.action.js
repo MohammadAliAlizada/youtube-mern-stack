@@ -12,7 +12,7 @@ export const getPopularVideos = () => async (dispatch, getState) => {
                 part: 'snippet,contentDetails,statistics',
                 chart: 'mostPopular',
                 regionCode: 'IN',
-                maxResults: 12,
+                maxResults: 20,
                 pageToken: getState().homeVideos.nextPageToken,
             },
         })
