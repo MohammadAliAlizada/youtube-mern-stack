@@ -24,7 +24,7 @@ export const getCommentsOfVideoById = id => async dispatch => {
         console.log(error.response.data)
         dispatch({
             type: COMMENT_LIST_FAIL,
-            payload: error.response.data,
+            payload: error.response.data.message,
         })
     }
 }

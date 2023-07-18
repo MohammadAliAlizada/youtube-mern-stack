@@ -1,4 +1,14 @@
 .app__container{
     display: flex;
-   margin-top: 10vh,
+   margin-top: 14vh;
+   
+}
+.app__main{
+  
+    overflow: hidden;
+    ::-webkit-scrollbar {
+      width: 0px;
+   }
+
+    
 }

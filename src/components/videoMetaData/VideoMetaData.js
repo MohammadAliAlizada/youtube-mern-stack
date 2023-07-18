@@ -35,10 +35,11 @@ const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
                     </span>
                 
                 <div>
-                    <span className="m-6">
+                    <span className="m-5">
                         <MdThumbUp size={26}/>{numeral(likeCount).format("0.a")}
-                    </span>
-                    <span className="m-6">
+                        </span>
+                  
+                    <span className="m-3">
                         <MdThumbDown size={26}/>{numeral(dislikeCount).format("0.a")}
                     </span>
                 </div>
@@ -51,7 +52,7 @@ const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
                         alt=""
                         className="rounded-circle mr-3"
                     />
-                    <div className="d-flex flex-column" >
+                    <div style={{paddingLeft: '8px'}} className="d-flex flex-column " >
                         <span>{channelTitle}</span>
                         <span>{numeral(channelStatistics?.subscriberCount).format("0.a")} Subscribers</span>
                     </div>

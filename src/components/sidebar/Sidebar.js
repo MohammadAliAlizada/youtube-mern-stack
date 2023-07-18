@@ -11,12 +11,16 @@ import {
 } from "react-icons/md"
 import { useDispatch } from 'react-redux';
 import { log_out } from '../../redux/actions/auth.action';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Sidebar = ({ sidebar, handleToggleSidebar }) => {
-
+    const navigate = useNavigate();
     const dispatch = useDispatch()
     const logOutHandler = () => {
         dispatch(log_out())
+
+        setTimeout(() => {
+            navigate('/auth')
+        }, 2000);
     }
 
     return (

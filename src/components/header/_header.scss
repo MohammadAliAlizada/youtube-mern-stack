@@ -9,7 +9,7 @@
 
    background-color: $black-primary;
 
-   height: 10vh;
+   height: 14vh;
    width: 100%;
 
    position: fixed;
@@ -31,8 +31,7 @@
       display: flex;
       padding: 0.1rem;
       margin: 0 1rem;
-      border-radius: 3px;
-      border: 1.2px solid;
+
       background-color: $black-secondary;
 
       input {
@@ -42,10 +41,11 @@
          background: transparent;
          padding: 0.3rem;
          color: $text-color;
+         border: 1px solid;
+         padding: 6px;
+         border-radius: 40px 0 0 40px;
 
-         &:focus {
-            outline: none;
-         }
+       
       }
 
       button {
@@ -53,9 +53,9 @@
          color: $text-color;
          background: transparent;
          border: none;
-         &:focus {
-            border: none;
-         }
+         border: 1px solid;
+         border-radius: 0 40px 40px 0;
+         
       }
    }
 

@@ -5,8 +5,11 @@ export const channelDetailsReducer = (
         loading: true,
         channel: {},
         subscriptionStatus: false,
-    }, action) => {
+    },
+    action
+) => {
     const { payload, type } = action
+
     switch (type) {
         case CHANNEL_DETAILS_REQUEST:
             return {
@@ -23,15 +26,14 @@ export const channelDetailsReducer = (
             return {
                 ...state,
                 channel: null,
-                error: payload,
                 loading: false,
+                error: payload,
             }
         case SET_SUBSCRIPTION_STATUS:
             return {
                 ...state,
-                subscriptionStatus: payload
+                subscriptionStatus: payload,
             }
-
         default:
             return state
     }

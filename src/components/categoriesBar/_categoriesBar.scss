@@ -31,4 +31,51 @@
          border-color: $border-color;
       }
    }
+  
 }
+ .scrollLeft{
+    
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    
+    margin-top: 12px;
+  
+   }
+ .scrollRight{
+ 
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin-left: 12px;
+    
+    margin-top: 12px;
+  
+   }
+   .scrollLeft:hover{
+    background-color: rgb(66, 65, 65);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    
+    margin-top: 12px;
+  
+   }
+ .scrollRight:hover{
+    background-color: rgb(66, 65, 65);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin-left: 12px;
+    
+    margin-top: 12px;
+  
+   }
+   .greater, .less{
+       cursor: pointer;
+       fill: gray;
+       margin-left: -3px;
+        margin-top: -1px;
+   }

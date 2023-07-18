@@ -4,9 +4,11 @@ export const commentListReducer = (
     state = {
         loading: true,
         comments: null,
-
-    }, action) => {
+    },
+    action
+) => {
     const { payload, type } = action
+
     switch (type) {
         case COMMENT_LIST_REQUEST:
             return {
@@ -22,10 +24,9 @@ export const commentListReducer = (
         case COMMENT_LIST_FAIL:
             return {
                 ...state,
-                error: payload,
                 loading: false,
+                error: payload,
             }
-
 
         default:
             return state
