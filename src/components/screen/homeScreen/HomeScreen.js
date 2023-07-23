@@ -50,7 +50,7 @@ const HomeScreen = ({ setProgress }) => {
                 }
                 className='row'>
                 {videos.map(video => (
-                    <Col lg={3} md={4} sm={4} xs={5}>
+                    <Col xl={3} lg={4} md={4} sm={4} xs={5}>
                         <Video video={video} key={video.id} />
                     </Col>))}
             </InfiniteScroll>
