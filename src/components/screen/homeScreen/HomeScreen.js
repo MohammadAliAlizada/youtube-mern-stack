@@ -9,7 +9,7 @@ import {
 } from '../../../redux/actions/videos.action'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
-import SkeletonVideo from '../../Skeleton/SkeletonVideo'
+// import SkeletonVideo from '../../Skeleton/SkeletonVideo'
 import { useNavigate } from 'react-router';
 
 const HomeScreen = ({ setProgress }) => {
@@ -23,9 +23,9 @@ const HomeScreen = ({ setProgress }) => {
         }
         dispatch(getPopularVideos())
         setProgress(100)
-    }, [dispatch, pageloading, navigate])
+    }, [dispatch, pageloading,accessToken, navigate,setProgress])
 
-    const { videos, activeCategory, loading } = useSelector(
+    const { videos, activeCategory} = useSelector(
         state => state.homeVideos
     )
 

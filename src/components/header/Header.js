@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './_header.scss'
 
 import { AiOutlineSearch } from 'react-icons/ai';
-import { MdNotifications, MdApps } from 'react-icons/md';
+import { MdNotifications } from 'react-icons/md';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { useNavigate } from 'react-router';
 import { useSelector } from 'react-redux';

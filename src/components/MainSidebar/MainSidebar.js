@@ -3,7 +3,6 @@ import './_mainSidebar.scss'
 import {
     MdSubscriptions,
     MdExitToApp,
-    MdThumbUp,
     MdHistory,
     MdLibraryBooks,
     MdHome,
