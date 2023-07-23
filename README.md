@@ -1,42 +1,34 @@
-# mern-note-with-redux
-It is a Full Stack Note App. Uses Redux for state managing and stores user details in encrypted format in Mongo DB Database.
+# youtube-mern-clone
+It is a Full Stack App. Used firbase for authentication, youtube api for implements videos, Redux for state managing and stores datas.
 
 ![](demo.png)
 # Tech Stack
-**Client:** React JS
+**Frant-end:** React JS
 
-**Server:** Node JS, Express JS
+**Authentication:** Firebase
 
-**Database:** Mongo DB
+**Videos:** Youtube API
 
 # Demo
-[https://note-with-redux.vercel.app/](https://note-with-redux.vercel.app/)
+[https://youtube-mern-stack.vercel.app/](https://youtube-mern-stack.vercel.app/)
 
 # Run Locally
 Clone the project
 ```bash
-  git clone https://github.com/MohammadAliAlizada/mern-note-with-redux.git
+  git clone https://github.com/MohammadAliAlizada/youtube-mern-stack.git
 ```
 Go to the project directory
 ```bash
-  cd mern-note-with-redux
+  cd youtube-mern-clone
 ```
 Install dependencies
 ```bash
   npm install
 ```
-```bash
-  cd frontend/
-  npm install
-```
+
 Start the server
 ```bash
   npm start
 ```
 Start the Client
 
-```bash
-  //open now terminal
-  cd frontend
-  npm start
-```
