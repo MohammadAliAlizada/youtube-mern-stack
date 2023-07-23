@@ -1,7 +1,7 @@
 # mern-note-with-redux
 It is a Full Stack Note App. Uses Redux for state managing and stores user details in encrypted format in Mongo DB Database.
 
-![demo.png]
+![](demo.png)
 # Tech Stack
 **Client:** React JS
 
