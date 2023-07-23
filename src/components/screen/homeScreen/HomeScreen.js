@@ -12,15 +12,17 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import SkeletonVideo from '../../Skeleton/SkeletonVideo'
 import { useNavigate } from 'react-router';
 
-const HomeScreen = () => {
+const HomeScreen = ({ setProgress }) => {
     const navigate = useNavigate()
     const { accessToken, loading: pageloading } = useSelector(state => state.auth)
     const dispatch = useDispatch()
     useEffect(() => {
+
         if (!pageloading && !accessToken) {
             navigate('/auth')
         }
         dispatch(getPopularVideos())
+        setProgress(100)
     }, [dispatch, pageloading, navigate])
 
     const { videos, activeCategory, loading } = useSelector(
@@ -35,10 +37,10 @@ const HomeScreen = () => {
     }
 
     return (
-        <Container>
-
+        <Container style={{marginLeft: '74px'}}>
+<Col lg={12} md={12} sm={12} xs={10}>
             <CategoriesBar />
-
+       </Col>
             <InfiniteScroll
                 dataLength={videos.length}
                 next={fetchData}
@@ -47,17 +49,10 @@ const HomeScreen = () => {
                     <div className='spinner-border text-danger d-block mx-auto'></div>
                 }
                 className='row'>
-                {!loading
-                    ? videos.map(video => (
-                        <Col lg={3} md={4}>
-                            <Video video={video} key={video.id} />
-                        </Col>
-                    ))
-                    : [...Array(20)].map(() => (
-                        <Col lg={3} md={4}>
-                            <SkeletonVideo />
-                        </Col>
-                    ))}
+                {videos.map(video => (
+                    <Col lg={3} md={4} sm={4} xs={5}>
+                        <Video video={video} key={video.id} />
+                    </Col>))}
             </InfiniteScroll>
         </Container>
     )

@@ -8,13 +8,14 @@ import { Container, Col, Row } from 'react-bootstrap';
 import Video from '../../video/Video'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import numeral from 'numeral'
-const ChannelScreen = () => {
+const ChannelScreen = ({ setProgress}) => {
 
     const { channelId } = useParams()
 
     const dispatch = useDispatch()
 
     useEffect(() => {
+        setProgress(100)
         dispatch(getVideosByChannel(channelId))
         dispatch(getChannelDetails(channelId))
     }, [dispatch, channelId])

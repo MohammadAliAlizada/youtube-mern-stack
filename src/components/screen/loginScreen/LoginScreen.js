@@ -5,7 +5,7 @@ import { login } from '../../../redux/actions/auth.action';
 import { useNavigate } from 'react-router';
 
 
-const LoginScreen = () => {
+const LoginScreen = ({setProgress}) => {
     const dispatch = useDispatch()
 
     const accessToken = useSelector(state => state.auth.accessToken)
@@ -17,6 +17,7 @@ const LoginScreen = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
+        setProgress(100);
         if (accessToken) {
             navigate('/')
         }

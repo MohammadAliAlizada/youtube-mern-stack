@@ -4,12 +4,13 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
+  
 
-   padding: 1rem 3rem;
+   padding: 1rem 2rem;
 
    background-color: $black-primary;
 
-   height: 14vh;
+   height: 10vh;
    width: 100%;
 
    position: fixed;
@@ -17,7 +18,8 @@
 
    z-index: 999;
    &__menu {
-      display: none;
+      display: block;
+      cursor: pointer;
    }
    &__logo {
       width: 30px;
@@ -33,7 +35,7 @@
       margin: 0 1rem;
 
       background-color: $black-secondary;
-
+      
       input {
          width: 100%;
          border: none;
@@ -42,10 +44,12 @@
          padding: 0.3rem;
          color: $text-color;
          border: 1px solid;
-         padding: 6px;
-         border-radius: 40px 0 0 40px;
+    padding: 8px;
+    border-radius: 40px 0 0 40px;
 
-       
+         &:focus {
+            outline: none;
+         }
       }
 
       button {
@@ -54,13 +58,14 @@
          background: transparent;
          border: none;
          border: 1px solid;
-         border-radius: 0 40px 40px 0;
+    border-radius: 0 40px 40px 0;
          
       }
+    
    }
 
    &__icons {
-      flex: 0.15;
+      
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -72,21 +77,30 @@
       }
    }
 }
+  .youtube{
+        color: white;
+    position: absolute;
+    margin-left: 34px;
+    font-weight: bold;
+    font-size: 23px;
+    letter-spacing: -0.7px;
+      }
 
 @media (max-width: $breakpoint-small) {
    .header {
       padding: 1rem;
 
       form {
-         flex: 1;
+        //  flex: 1;
+         margin-left: 56px;
       }
 
-      &__menu {
-         display: block;
-      }
-      &__logo {
-         display: none;
-      }
+      // &__menu {
+      //    display: block;
+      // }
+      // &__logo {
+      //    display: none;
+      // }
 
       &__icons > *:not(img) {
          display: none;

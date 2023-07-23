@@ -1,20 +1,23 @@
 @import '../../_base.scss';
 
-.sidebar {
+.mainSidebar {
    background: $black-secondary;
-
    display: flex;
    flex-direction: column;
-
-   width: 80px;
-   height: 90vh;
-   padding-top: 8px;
-   transition: transform 0.2s ease-in;
-
+   transition-duration: 200ms;
+   touch-action: pan-y;
+   width: 210px;
+   height: 100vh;
+   padding-top: 19px;
+   transition: transform 0.8s ease-in;
+   z-index: 9999;
    position: fixed;
-   top: 10vh;
+   top: 0;
    left: 0;
-
+//     &.menuVisiblity{
+// visibility: hidden;
+// transform: translateX(-100%);
+//     }
    a {
       color: $text-color;
       &:hover {
@@ -26,18 +29,14 @@
    li {
       display: flex;
       align-items: center;
-    flex-direction: column;
-      padding: 0.6rem 1.5rem;
+
+      padding: 0.6rem 1.9rem;
       margin: 0.2rem 0;
       cursor: pointer;
 
       span {
-       
-          text-align: center !important;
-          align-items: center !important;
-          align-content: center;
-         margin-top: 4px;
-         font-size: 10px;
+         margin-left: 1rem;
+         font-size: 11px;
          font-weight: 500;
          letter-spacing: 0.4px;
       }
@@ -55,10 +54,24 @@
       transform: translateX(0);
    }
 }
+.mainSidebar::-webkit-scrollbar {
+  width: 10px; /* Adjust the width as needed */
+  background-color: #000000; /* Set your desired background color */
+}
+
+/* Set the appearance and color of the scrollbar thumb (handle) */
+.mainSidebar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Set your desired thumb color */
+}
+
+/* On hover, set a darker color for the scrollbar thumb */
+.mainSidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Set your desired hover color */
+}
 
 // @media (max-width: $breakpoint-medium) {
 //    .sidebar {
-//       width: 80px;
+//       width: 90px;
 //       li {
 //          justify-content: center;
 //       }
@@ -70,12 +83,7 @@
 // @media (max-width: $breakpoint-small) {
 //    .sidebar {
 //       transform: translateX(-100%);
-//       li {
-//          justify-content: center;
-//       }
-//       span {
-//          display: none;
-//       }
+
 //       position: fixed;
 //       z-index: 999;
 //    }

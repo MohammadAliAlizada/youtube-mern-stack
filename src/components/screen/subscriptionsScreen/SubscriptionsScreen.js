@@ -7,12 +7,13 @@ import VideoHorizontal from '../../videoHorizontal/VideoHorizontal';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 
-const SubscriptionsScree = () => {
+const SubscriptionsScree = ({ setProgress}) => {
 
 
     const dispatch = useDispatch()
 
     useEffect(() => {
+        setProgress(100)
         dispatch(getSubscribeChannels())
     }, [dispatch])
 

@@ -9,12 +9,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getVideoById, getRelatedVideos } from '../../../redux/actions/videos.action';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { Helmet } from 'react-helmet'
-const WatchScreen = () => {
+const WatchScreen = ({ setProgress }) => {
     const { id } = useParams();
 
     const dispatch = useDispatch()
 
     useEffect(() => {
+        setProgress(100)
         dispatch(getVideoById(id))
 
         dispatch(getRelatedVideos(id))
@@ -34,11 +35,12 @@ const WatchScreen = () => {
             <Col lg={8}>
                 <div className='watchScreen__player'>
                     <iframe
-                        src={`https://www.youtube.com/embed/${id}`}
+                        src={`https://www.youtube.com/embed/${id}?autoplay=1`}
                         frameBorder='0'
                         title={video ?.snippet ?.title}
                         allowFullScreen
                         width='100%'
+                        allow='autoplay'
                         height='100%'></iframe>
                 </div>
                 {!loading ? (

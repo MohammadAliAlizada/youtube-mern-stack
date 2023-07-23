@@ -6,13 +6,14 @@ import { Container } from 'react-bootstrap';
 import VideoHorizontal from '../videoHorizontal/VideoHorizontal'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
-const SearchScreen = () => {
+const SearchScreen = ({ setProgress}) => {
     const { query } = useParams()
 
 
     const dispatch = useDispatch()
 
     useEffect(() => {
+        setProgress(100)
         dispatch(getVideosBySearch(query))
     }, [query, dispatch])
 

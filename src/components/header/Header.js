@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import './_header.scss'
-import { FaBars } from "react-icons/fa";
+
 import { AiOutlineSearch } from 'react-icons/ai';
 import { MdNotifications, MdApps } from 'react-icons/md';
+import { RxHamburgerMenu } from 'react-icons/rx';
 import { useNavigate } from 'react-router';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -13,22 +14,29 @@ const Header = ({ handleToggleSidebar }) => {
     const navigat = useNavigate()
     const handleSubmit = (e) => {
         e.preventDefault()
-        navigat(`/search/${input}`)
+        if (input) {
+
+            navigat(`/search/${input}`)
+        }
     }
 
     const user = useSelector(state => state.auth ?.user)
     return (
-        <div className="border border-dark header">
-            <FaBars className="header__menu" size={26}
+        <div className="  header">
+            <div className="d-flex">
+            <RxHamburgerMenu className="header__menu" size={26}
                 onClick={() => handleToggleSidebar()}
             />
-            <Link to={'/'}>
+                <Link to={'/'} className="d-flex" style={{marginLeft: '20px'}}>
                 <img
                     src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"
                     alt=""
                     className="header__logo"
                 />
-            </Link>
+
+                <span className="youtube">YouTube</span>
+                </Link>
+            </div>
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="search" value={input} onChange={e => setInput(e.target.value)} />
                 <button type="submit"><AiOutlineSearch size={22} /></button>
@@ -36,7 +44,7 @@ const Header = ({ handleToggleSidebar }) => {
 
             <div className="header__icons">
                 <MdNotifications size={28} />
-                <MdApps size={28} />
+                {/* <MdApps size={28} /> */}
                 <img src={user ?.photoURL} alt='avatar' />
 
             </div>

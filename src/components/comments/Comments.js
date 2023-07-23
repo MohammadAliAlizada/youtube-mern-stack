@@ -31,7 +31,7 @@ const Comments = ({ videoId, totalComments }) => {
         setText('')
     }
     return (
-        <div className='comments'>
+        <div className='comments' style={{marginLeft: '1rem'}}>
             <p>{totalComments} Comments</p>
             <div className='my-2 comments__form d-flex w-100'>
                 <img src={photoURL} alt='avatar' className='mr-3 rounded-circle' />

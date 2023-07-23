@@ -1,11 +1,11 @@
 @import '../../_base.scss';
 .videoMetaData {
+   
    &__top {
       span {
          cursor: pointer;
       }
    }
-
    &__channel {
       border-top: 0.2px solid $border-color;
       border-bottom: 0.2px solid $border-color;

@@ -1,6 +1,6 @@
 .app__container{
     display: flex;
-   margin-top: 14vh;
+   margin-top: 10vh;
    
 }
 .app__main{
@@ -11,4 +11,8 @@
    }
 
     
+}
+.sidebarOpen{
+    opacity: 0.3;
+   
 }

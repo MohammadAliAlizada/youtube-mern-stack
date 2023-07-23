@@ -23,7 +23,7 @@ const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
         dispatch(checkSubscriptionStatus(channelId))
     }, [dispatch, channelId])
     return (
-        <div className="videoMetaDeta py-2">
+        <div className="videoMetaDeta py-2 " style={{marginLeft: '1rem'}}>
             <HelmetCustom title={title} description={description} />
             <div className="videoMetaData__top">
                 <h5>{title}</h5>
