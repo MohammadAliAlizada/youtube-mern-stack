@@ -4,6 +4,7 @@ It is a Full Stack App. Used Firebase for authentication, youtube API for implem
 ![demo](https://github.com/MohammadAliAlizada/youtube-mern-stack/assets/40995758/5f5a649f-c300-4b88-879b-c13277f2a7fa)
 
 # Tech Stack
+1-react
 2-youtube-api
 3-react-redux
 4-react-bootstrap
