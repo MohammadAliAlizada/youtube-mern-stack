@@ -4,11 +4,17 @@ It is a Full Stack App. Used Firebase for authentication, youtube API for implem
 ![demo](https://github.com/MohammadAliAlizada/youtube-mern-stack/assets/40995758/5f5a649f-c300-4b88-879b-c13277f2a7fa)
 
 # Tech Stack
-**Frant-end:** React JS
-
-**Authentication:** Firebase
-
-**Videos:** Youtube API
+2-youtube-api
+3-react-redux
+4-react-bootstrap
+5-scss
+6-react-infinite-scroll-component
+7-react-lazy-load-image-component
+8-react-router-dom
+9-react-helmet
+10-react-icons
+11-react-show-more-text
+12-react-top-loading-bar
 
 # Demo
 [https://youtube-mern-stack.vercel.app/](https://youtube-mern-stack.vercel.app/)
