@@ -1,6 +1,7 @@
 # youtube-mern-clone
 It is a Full Stack App. Used Firebase for authentication, youtube API for implementing videos, and Redux for state managing and storing data.
 
+![demo](https://github.com/MohammadAliAlizada/youtube-mern-stack/assets/40995758/ed444043-04c4-41b2-873d-70b03a0950a9)
 
 
 # Tech Stack
