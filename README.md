@@ -19,7 +19,7 @@ It is a Full Stack App. Used Firebase for authentication, youtube API for implem
 12-react-top-loading-bar
 
 # Demo
-[https://youtube-mern-stack.vercel.app/](https://youtube-mern-stack.vercel.app/)
+[https://youtube-clone-mern-stack.vercel.app/](https://youtube-clone-mern-stack.vercel.app/)
 
 # Run Locally
 Clone the project
