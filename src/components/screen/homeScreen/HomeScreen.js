@@ -18,9 +18,9 @@ const HomeScreen = ({ setProgress }) => {
     const dispatch = useDispatch()
     useEffect(() => {
 
-        if (!pageloading && !accessToken) {
-            navigate('/auth')
-        }
+        // if (!pageloading && !accessToken) {
+        //     navigate('/auth')
+        // }
         dispatch(getPopularVideos())
         setProgress(100)
     }, [dispatch, pageloading,accessToken, navigate,setProgress])

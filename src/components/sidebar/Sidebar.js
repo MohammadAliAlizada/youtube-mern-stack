@@ -8,11 +8,11 @@ import {
     MdHome,
     MdSentimentDissatisfied
 } from "react-icons/md"
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { log_out } from '../../redux/actions/auth.action';
 import { Link, useNavigate } from 'react-router-dom';
 const Sidebar = () => {
-    
+    const { accessToken, loading: pageloading } = useSelector(state => state.auth)
     const navigate = useNavigate();
     const dispatch = useDispatch()
     const logOutHandler = () => {
@@ -57,7 +57,7 @@ const Sidebar = () => {
             <hr />
             <li onClick={logOutHandler}>
                 <MdExitToApp size={23} />
-                <span>Logout</span>
+               {accessToken ? <span>Logout</span> : <span>Login</span> } 
             </li>
             <hr />
         </nav>
