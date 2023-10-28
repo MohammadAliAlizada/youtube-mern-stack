@@ -45,7 +45,7 @@ const Header = ({ handleToggleSidebar }) => {
             <div className="header__icons">
                 <MdNotifications size={28} />
                 {/* <MdApps size={28} /> */}
-                <img src={user ?.photoURL} alt='avatar' />
+                <img src={user ? user.photoURL :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7wrKjpbjvQzLHlQfvKO8gsopOJBvbCEXe1A&usqp=CAU"} alt='avatar' />
 
             </div>
 
