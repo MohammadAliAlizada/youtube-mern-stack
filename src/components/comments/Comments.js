@@ -14,8 +14,7 @@ const Comments = ({ videoId, totalComments }) => {
     }, [videoId, dispatch])
 
     const comments = useSelector(state => state.commentsList.comments)
-    const { photoURL } = useSelector(state => state.auth ?.user)
-
+    const userImage = useSelector(state => state.auth ?.user)
     const [text, setText] = useState('')
 
     const _comments = comments ?.map(
@@ -34,7 +33,7 @@ const Comments = ({ videoId, totalComments }) => {
         <div className='comments' style={{marginLeft: '1rem'}}>
             <p>{totalComments} Comments</p>
             <div className='my-2 comments__form d-flex w-100'>
-                <img src={photoURL} alt='avatar' className='mr-3 rounded-circle' />
+                 <img src={ userImage ? userImage.photoURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7wrKjpbjvQzLHlQfvKO8gsopOJBvbCEXe1A&usqp=CAU"} alt='avatar' className='mr-3 rounded-circle' />
                 <form onSubmit={handleComment} className='d-flex flex-grow-1'>
                     <input
                         type='text'
